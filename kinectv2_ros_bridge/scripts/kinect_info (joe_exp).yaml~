@@ -1,0 +1,15 @@
+offset:
+    x: -0.06
+    y: 0.06
+    z: 0.06
+
+base2camera:
+  degree: 10.300272742216505
+  radian: 0.17977367320510315
+base2kinect:
+  degree: 40.140882278815255
+  radian: 0.7005905604207707
+camera2kinect:
+  degree: 29.84060953659875
+  radian: 0.5208168872156675
+

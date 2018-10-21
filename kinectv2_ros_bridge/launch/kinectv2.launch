@@ -1,0 +1,14 @@
+<launch>
+	<group ns="vision">
+		<!-- kinect の座標系定義 -->
+        <rosparam command="load" file="$(find kinectv2_ros_bridge)/scripts/kinect_info.yaml"/>
+        <node pkg="kinectv2_ros_bridge" name="kinect_frame_publisher" type="kinect_frame_publisher.py">
+		</node>
+
+		<!-- vision order sender -->
+        <rosparam command="load" file="$(find kinectv2_ros_bridge)/scripts/vision_pc.yaml"/>
+		<node pkg="kinectv2_ros_bridge" name="vision_order_bridge" type="vision_order_sender.py" cwd="node" output="screen">
+		</node>
+	</group>
+
+</launch>

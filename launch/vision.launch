@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="host" default="octopus.local"/>
+
+	<param name="vision/host" value="$(arg host)"/>
+
+	<!-- vision module -->
+	<group ns="vision_module">
+			<node pkg="vision_module"
+					name="image_capture" type="image_capture">
+				<param name="image_capture_rate" value="15"/>
+			</node>
+			<node pkg="vision_module"
+					name="plane_detection" type="plane_detection"/>
+			<node pkg="vision_module"
+					name="object_detection" type="object_detection_with_PD"/>
+			<node pkg="vision_module"
+					name="object_recognition" type="object_recognition"/>
+			<!-- <node pkg="vision_module"
+					name="face_detection" type="face_detection"/>
+			<node pkg="vision_module"
+					name="face_recognition" type="face_recognition"/> -->
+			<!-- <node pkg="vision_module"
+					name="darknet" type="darknet"/> -->
+
+			<!-- laod dynamic reconfigure -->
+			<!-- <node name="dynamic_reconfigure_object_detection" pkg="dynamic_reconfigure" type="dynparam" args="load /vision_module/object_detection $(find action_learning)launch/params/object_detection.yaml" />
+			<node name="dynamic_reconfigure_plane_detection" pkg="dynamic_reconfigure" type="dynparam" args="load /vision_module/plane_detection $(find action_learning)launch/params/plane_detection.yaml" />
+			<node name="dynamic_reconfigure_object_recognition" pkg="dynamic_reconfigure" type="dynparam" args="load /vision_module/object_recognition $(find action_learning)launch/params/object_recognition.yaml" /> -->
+
+			<!-- kinect の座標系定義 -->
+			<!-- <rosparam command="load" file="$(find kinectv2_ros_bridge)/scripts/kinect_info.yaml"/>
+			<node pkg="kinectv2_ros_bridge" name="kinect_frame_publisher" type="kinect_frame_publisher.py">
+			</node> -->
+
+	</group>
+
+	<!-- vision_wrapper -->
+	<node pkg="vision_module_wrapper" name="vision_wrapper_node" type="vision_wrapper.py">
+			<param  name="~parent_frame" value="base" />
+			<param  name="~child_frame" value="kinect2_rgb_optical_frame" />
+	</node>
+
+</launch>
+
