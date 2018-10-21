@@ -47,8 +47,8 @@ RUN apt-get install -y python-pip python-dev
 RUN pip install https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.11.0-cp27-none-linux_x86_64.whl
 # RUN pip install https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-0.11.0-cp27-none-linux_x86_64.whl
 
-RUN mkdir -p /catkin_ws/src
 WORKDIR /catkin_ws/src
+RUN mkdir -p /catkin_ws/src
 RUN git clone https://github.com/MojaX2/vision_module.git
 WORKDIR /catkin_ws/src/vision_module
 RUN mkdir /b 

@@ -29,16 +29,17 @@
 			<node name="dynamic_reconfigure_object_recognition" pkg="dynamic_reconfigure" type="dynparam" args="load /vision_module/object_recognition $(find action_learning)launch/params/object_recognition.yaml" /> -->
 
 			<!-- kinect の座標系定義 -->
-			<!-- <rosparam command="load" file="$(find kinectv2_ros_bridge)/scripts/kinect_info.yaml"/>
-			<node pkg="kinectv2_ros_bridge" name="kinect_frame_publisher" type="kinect_frame_publisher.py">
-			</node> -->
+			<rosparam command="load" file="$(find vision_module_wrapper)/scripts/kinect_info.yaml"/>
+			<node pkg="vision_module_wrapper" name="kinect_frame_publisher" type="kinect_frame_publisher.py">
+			</node>
 
 	</group>
 
 	<!-- vision_wrapper -->
 	<node pkg="vision_module_wrapper" name="vision_wrapper_node" type="vision_wrapper.py">
 			<param  name="~parent_frame" value="base" />
-			<param  name="~child_frame" value="kinect2_rgb_optical_frame" />
+			<!-- <param  name="~child_frame" value="kinect2_rgb_optical_frame" /> -->
+			<param  name="~child_frame" value="camera_color_optical_frame" />
 	</node>
 
 </launch>
