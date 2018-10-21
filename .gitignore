@@ -11,10 +11,6 @@ vision_pack/facemodel/face_net\.tf\.meta
 
 *.pyc
 
-vision_pack/model/bvlc_reference_caffenet\.tf
+# vision_pack/model/bvlc_reference_caffenet\.tf
 
-vision_pack/model/model\.libsvm
-
-vision_pack/model/model\.libsvm\.final
-
-vision_pack/model/model\.libsvm\.jpop
+# vision_pack/model/model\.libsvm

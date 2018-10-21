@@ -41,6 +41,7 @@ RUN wget https://github.com/opencv/opencv/archive/2.4.13.3.zip \
 
 RUN ln /dev/null /dev/raw1394
 
+RUN apt-get install -y terminator
 RUN apt-get install -y python-pip python-dev
 # RUN pip install --upgrade pip
 RUN pip install https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.11.0-cp27-none-linux_x86_64.whl
@@ -48,7 +49,7 @@ RUN pip install https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0
 
 RUN mkdir -p /catkin_ws/src
 WORKDIR /catkin_ws/src
-RUN git clone https://github.com/karaage-pp/vision_module.git
+RUN git clone https://github.com/MojaX2/vision_module.git
 WORKDIR /catkin_ws/src/vision_module
 RUN mkdir /b 
 RUN mv object_* visualizer/ face_* darknet/ plane_detection/ image_capture /b
