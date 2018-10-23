@@ -1,0 +1,31 @@
+!!python/object/new:dynamic_reconfigure.encoding.Config
+dictitems:
+  DISPLAY: true
+  ERROR_RANGE: 0.014
+  MAX_DIST: 2.0
+  MAX_GAP: 0.02
+  MIN_DIST: 0.5
+  MIN_SEGMENT_SIZE: 80000
+  SAVE_IMAGE: false
+  SEARCH_ITERATION: 100
+  groups: !!python/object/new:dynamic_reconfigure.encoding.Config
+    dictitems:
+      DISPLAY: true
+      ERROR_RANGE: 0.014
+      MAX_DIST: 2.0
+      MAX_GAP: 0.02
+      MIN_DIST: 0.5
+      MIN_SEGMENT_SIZE: 80000
+      SAVE_IMAGE: false
+      SEARCH_ITERATION: 100
+      groups: !!python/object/new:dynamic_reconfigure.encoding.Config
+        state: []
+      id: 0
+      name: Default
+      parameters: !!python/object/new:dynamic_reconfigure.encoding.Config
+        state: []
+      parent: 0
+      state: true
+      type: ''
+    state: []
+state: []

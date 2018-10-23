@@ -8,7 +8,7 @@
 	<group ns="vision_module">
 			<node pkg="vision_module"
 					name="image_capture" type="image_capture">
-				<param name="image_capture_rate" value="15"/>
+				<param name="image_capture_rate" value="3"/>
 			</node>
 			<node pkg="vision_module"
 					name="plane_detection" type="plane_detection"/>
@@ -24,9 +24,12 @@
 					name="darknet" type="darknet"/> -->
 
 			<!-- laod dynamic reconfigure -->
-			<!-- <node name="dynamic_reconfigure_object_detection" pkg="dynamic_reconfigure" type="dynparam" args="load /vision_module/object_detection $(find action_learning)launch/params/object_detection.yaml" />
-			<node name="dynamic_reconfigure_plane_detection" pkg="dynamic_reconfigure" type="dynparam" args="load /vision_module/plane_detection $(find action_learning)launch/params/plane_detection.yaml" />
-			<node name="dynamic_reconfigure_object_recognition" pkg="dynamic_reconfigure" type="dynparam" args="load /vision_module/object_recognition $(find action_learning)launch/params/object_recognition.yaml" /> -->
+			<node name="dynamic_reconfigure_object_detection" pkg="dynamic_reconfigure" type="dynparam" 
+				args="load /vision_module/object_detection $(find vision_module)launch/params/object_detection.yaml" />
+			<node name="dynamic_reconfigure_plane_detection" pkg="dynamic_reconfigure" type="dynparam" 
+				args="load /vision_module/plane_detection $(find vision_module)launch/params/plane_detection.yaml" />
+			<node name="dynamic_reconfigure_object_recognition" pkg="dynamic_reconfigure" type="dynparam" 
+				args="load /vision_module/object_recognition $(find vision_module)launch/params/object_recognition.yaml" />
 
 			<!-- kinect の座標系定義 -->
 			<rosparam command="load" file="$(find vision_module_wrapper)/scripts/kinect_info.yaml"/>

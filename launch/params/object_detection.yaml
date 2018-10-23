@@ -1,0 +1,31 @@
+!!python/object/new:dynamic_reconfigure.encoding.Config
+dictitems:
+  DISPLAY: true
+  MAX_DEPTH: 0.2
+  MAX_DIST: 1.5
+  MAX_HEIGHT: 0.3
+  MAX_WIDTH: 0.3
+  MIN_HEIGHT: 0.1
+  MIN_POINT: 2200
+  SAVE_IMAGE: false
+  groups: !!python/object/new:dynamic_reconfigure.encoding.Config
+    dictitems:
+      DISPLAY: true
+      MAX_DEPTH: 0.2
+      MAX_DIST: 1.5
+      MAX_HEIGHT: 0.3
+      MAX_WIDTH: 0.3
+      MIN_HEIGHT: 0.1
+      MIN_POINT: 2200
+      SAVE_IMAGE: false
+      groups: !!python/object/new:dynamic_reconfigure.encoding.Config
+        state: []
+      id: 0
+      name: Default
+      parameters: !!python/object/new:dynamic_reconfigure.encoding.Config
+        state: []
+      parent: 0
+      state: true
+      type: ''
+    state: []
+state: []

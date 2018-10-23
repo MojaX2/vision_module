@@ -65,5 +65,5 @@ RUN git clone https://github.com/MojaX2/vision_module_wrapper.git
 WORKDIR /catkin_ws
 RUN /bin/bash -c "source /opt/ros/indigo/setup.bash; catkin_make"
 
-
+RUN apt install libcanberra-gtk-module libcanberra-gtk3-module
 CMD bash
