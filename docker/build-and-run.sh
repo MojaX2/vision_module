@@ -1,4 +1,6 @@
 IMAGE_NAME="moja2/vision_module"
+HOST_IP=`hostname -I | cut -f1 -d' '`
+MASTER_IP="192.168.1.88"
 
 xhost +
 
@@ -7,11 +9,11 @@ docker build -t $IMAGE_NAME .
 docker run ${RUN_ARGS} \
        -it --rm --name vision \
        --net="host" \
-       -e ROS_MASTER_URI=http://192.168.1.88:11311 \
-       -e ROS_IP=192.168.1.33 \
-       -e ROS_HOSTNAME="192.168.1.33" \
-       --add-host="octopus:192.168.1.33" \
-       --add-host="baxter.local:192.168.1.88" \
+       -e ROS_MASTER_URI=http://$MASTER_IP:11311 \
+       -e ROS_IP=$HOST_IP \
+       -e ROS_HOSTNAME="$HOST_IP" \
+       --add-host="kraken:$HOST_IP" \
+       --add-host="baxter.local:$MASTER_IP" \
        -e DISPLAY=$DISPLAY \
        -v /tmp/.X11-unix:/tmp/.X11-unix \
        -e LIBGL_ALWAYS_SOFTWARE=1 \
