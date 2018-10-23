@@ -11,6 +11,8 @@ vision_pack/facemodel/face_net\.tf\.meta
 
 *.pyc
 
-# vision_pack/model/bvlc_reference_caffenet\.tf
-
-# vision_pack/model/model\.libsvm
+cfg/coco.data
+darknet/include/config.h
+include/vision_module/*/config.h
+vision_pack/model/bvlc_reference_caffenet\.tf
+vision_pack/model/model\.libsvm
